@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-success" [disabled]="!taskForm.valid">Sačuvaj</button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Otkaži</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="title">Zadatak</label>
+            <input
+              type="text"
+              id="title"
+              class="form-control"
+              formControlName="title"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="description">Opis zadatka</label>
+            <textarea
+              type="text"
+              id="description"
+              class="form-control"
+              rows="6"
+              formControlName="description"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="person">Osoba zadužena za zadatak</label>
+            <select
+              type="text"
+              id="person"
+              class="form-control"
+              formControlName="person"
+            >
+              <option value="Ivana">Ivana</option>
+              <option value="Goran">Goran</option>
+              <option value="Jelena">Jelena</option>
+              <option value="Damjan">Damjan</option>
+              <option value="Marija">Marija</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="date">Zadatak obaviti do </label>
+            <input
+              type="date"
+              id="date"
+              class="form-control"
+              rows="6"
+              formControlName="date"
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

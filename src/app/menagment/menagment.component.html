@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-xs-12" style="text-align: center">
+    <h2>Pregled sedmičnih zadataka COFUS Call centra</h2>
+  </div>
+</div>
+<br /><br />
+<div class="example-container">
+  <h4>Za uraditi</h4>
+
+  <div
+    cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="todo"
+    [cdkDropListConnectedTo]="[doingList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="example-box" *ngFor="let item of todo; let i = index" cdkDrag>
+        <p>{{ item.title }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h4>Radi se</h4>
+
+  <div
+    cdkDropList
+    #doingList="cdkDropList"
+    [cdkDropListData]="doing"
+    [cdkDropListConnectedTo]="[doneList, todoList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="example-box" *ngFor="let item of doing" cdkDrag>
+      {{ item.title }}
+    </div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h4>Urađeno</h4>
+
+  <div
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="done"
+    [cdkDropListConnectedTo]="[doingList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="example-box" *ngFor="let item of done" cdkDrag>
+      {{ item.title }}
+    </div>
+  </div>
+</div>

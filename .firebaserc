@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ng-to-do-app-75be1": {
+      "hosting": {
+        "ToDoApp": [
+          "ng-to-do-app-75be1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ng-to-do-app-75be1"
+  }
+}

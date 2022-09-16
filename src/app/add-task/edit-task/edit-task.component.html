@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-xs-12 form-group">
+          <label for="title">Zadatak</label>
+          <input
+            type="text"
+            id="title"
+            class="form-control"
+            name="title"
+            ngModel
+            required
+            #title="ngModel"
+          />
+        <span *ngIf="!title.valid && title.touched" class="help-block">Molimo ukucajte ispravne podatke!</span>
+
+        </div>
+        <div class="col-xs-12 form-group">
+          <label for="description">Opis zadatka</label>
+          <textarea
+            type="text"
+            id="description"
+            rows="6"
+            class="form-control"
+            name="description"
+            ngModel
+            required
+            #description="ngModel"
+          >
+        </textarea>
+        <span *ngIf="!description.valid && description.touched" class="help-block">Molimo ukucajte ispravne podatke!</span>
+        </div>
+        <div class="col-xs-12 form-group">
+          <label for="person">Osoba zadužena za zadatak</label>
+          <select
+            type="text"
+            id="person"
+            class="form-control"
+            name="person"
+            ngModel
+            required
+            #person="ngModel"
+          >
+            <option value="Ivana">Ivana</option>
+            <option value="Goran">Goran</option>
+            <option value="Jelena">Jelena</option>
+            <option value="Damjan">Damjan</option>
+            <option value="Marija">Marija</option>
+          </select>
+          <span *ngIf="!person.valid && person.touched" class="help-block">Molimo ukucajte ispravne podatke!</span>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 form-group">
+            <label for="date">Zadatak obaviti do </label>
+            <input
+              type="date"
+              id="date"
+              class="form-control"
+              rows="6"
+              name="date"
+              ngModel
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            type="submit"
+            class="btn btn-success"
+            style="margin-right: 5px"
+            [disabled]="!f.valid"
+          >
+            {{ editMode ? "Sačuvaj" : "Dodaj" }}
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            style="margin-right: 5px"
+            (click)="onClear()"
+          >
+            Očisti
+          </button>
+          <button
+            *ngIf="editMode"
+            type="button"
+            class="btn btn-primary"
+            (click)="onDelete()"
+          >
+            Izbriši
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

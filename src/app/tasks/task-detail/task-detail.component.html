@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ task.title }}</h1>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-xs-12">{{ task.description }}</div>
+</div>
+<br>
+<div class="row" >
+  <div class="col-xs-12">
+    Zadatak obaviti do: <strong> {{task.date}} </strong>
+  </div>
+</div>
+<br>
+<div class="row  pull-right" >
+  <div class="col-xs-12">
+    Osoba zadužena za obavljanje zadatka: <strong> {{ task.person }} </strong>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group" appDropdown>
+      <button type="button" class="btn btn-danger dropdown-toggle">
+        Izmijeni / izbriši zadatak <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li style="margin-left: 5px">
+          <a style="cursor: pointer" (click)="onModifyTask()"
+            >Izmijeni zadatak</a
+          >
+        </li>
+        <li style="margin-left: 5px">
+          <a style="cursor: pointer" (click)="onDeleteTask()"
+            >Izbriši zadatak</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
